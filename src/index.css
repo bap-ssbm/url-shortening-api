@@ -1,13 +1,44 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#shorten-input-box{
+    background-image: url("./images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#call-to-action{
+    background-image: url("./images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width:768px) {
+    #shorten-input-box{
+        background-image: url("./images/bg-shorten-desktop.svg");
+        background-size: cover;
+    }
+    
+    #call-to-action{
+        background-image: url("./images/bg-boost-desktop.svg");
+        
+    }
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+    background-color: rgb(69, 69, 69);
+}
+::-webkit-scrollbar-thumb:hover{
+   background-color: rgb(61, 61, 61);
 }
