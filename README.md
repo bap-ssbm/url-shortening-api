@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Frontend Mentor - Shortly URL shortening API Challenge solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
 
-In the project directory, you can run:
+### The challenge
 
-### `npm start`
+Users should be able to:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- View the optimal layout for the site depending on their device's screen size
+- Shorten any valid URL
+- See a list of their shortened links, even after refreshing the browser
+- Copy the shortened link to their clipboard in a single click
+- Receive an error message when the `form` is submitted if:
+  - The `input` field is empty
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Screenshot
 
-### `npm test`
+https://prnt.sc/NUlR2Y0Kksqt
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Semantic HTML5 markup
+- tailwindCSS
+- ReactJS
+- Framer-Motion
+- Mobile-first workflow
+- shrtcode API
+- Axios
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What I learned
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+I learned alot from this project. I learned that using tailwind for animations rather than framer-motion in some situations is better and easier to use.
+i learned that there is a function that can let user copy a variable by clicking on a button.
+learned a bit more how to do axios, this time, i manually wrote the code of getting the api myself. Getting better at making clean framer-motion animations. and also tailwind CSS. its becoming a bit more second nature to me.
+Although sometimes i have to look at the documentation.
 
-## Learn More
+Oh yeah, this is one of my first times using mobile-first workflow, it actually worked better for me, i didnt have to worry about anything breaking in the mobile view, since I created it that way first
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```html
+ <div className="flex flex-col space-y-20 text-violet-1100 tracking-tight md:flex-row md:space-y-0 md:space-x-16">
+            <ul className="space-y-3">
+                <li className="font-bold text-white mb-6">Features</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Link Shortening</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Branded Links</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Analytics</li>
+            </ul>
+            <ul className="space-y-3">
+                <li className="font-bold text-white mb-6 ">Resources</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Blog</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Developers</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >
+            Support</li>
+            </ul>
+            <ul className="space-y-3">
+                <li className="font-bold text-white mb-6 ">Company</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >About</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Our Team</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Careers</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Contact</li>
+            </ul>
+            
+        </div>
+```
+I've never really considered using lists much for navs, footers and stuff, but i feel like tailwind has openned up that door for me since, it makes it so that i dont have to worry about removing the way it is normally, before adding my own styles on to it.
+```css
+#shorten-input-box{
+    background-image: url("./images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#call-to-action{
+    background-image: url("./images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-### Code Splitting
+@media (min-width:768px) {
+    #shorten-input-box{
+        background-image: url("./images/bg-shorten-desktop.svg");
+        background-size: cover;
+    }
+    
+    #call-to-action{
+        background-image: url("./images/bg-boost-desktop.svg");
+        
+    }
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
 
-### Analyzing the Bundle Size
+I feel like i was able to finally be able to use background-image the way i want and the way it loojks on the preview of how the website people want it.
+```js
+  let translate = order === 1 && "md:translate-y-[-40px]";
+    order === 3 && (translate = "md:translate-y-[40px]");
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+```
+im proud of this order variable i made for the cards in the bottom section. It allowed me to manipulate them the way i wanted with translate, as well as framer motion animations later on.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Continued development
 
-### Advanced Configuration
+Using API's is fun, and this project made me appreciate them a bit more.
+Also, since this was my first mobile first project, I feel like I have a bit more to learn, but I feel like this way is pretty nice, and gives me much more flexibilityt than I initially thought.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
