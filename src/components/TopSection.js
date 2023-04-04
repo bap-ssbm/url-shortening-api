@@ -32,7 +32,7 @@ const TopSection = () =>{
     return(
         <section className="flex flex-col md:flex-row space-y-10 w-full md:items-center md:my-24 md:max-w-[1200px]">
           <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:0.8}} className="relative py-16 md:order-1 md:w-1/3">
-            <img className="scale-150 md:scale-[200%] ml-[25%] md:ml-[40%]" src="../images/illustration-working.svg" alt="working-illustration"/>
+            <img className="scale-150 md:scale-[200%] ml-[25%] md:ml-[40%]" src="./images/illustration-working.svg" alt="working-illustration"/>
           </motion.div>
 
           <motion.div variants={sectionVariant} initial="hidden" whileInView="visible" className="flex flex-col items-center md:items-start space-y-10 md:space-y-5 md:w-2/3">

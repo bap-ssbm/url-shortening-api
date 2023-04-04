@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
             <div className="mr-10">
-                <motion.img initial={{x:-50, opacity:0}} animate={{x:0 ,opacity:1 ,transition:{delay:0.4, ease:'easeInOut', duration:0.7}}} src="../images/logo.svg" />
+                <motion.img initial={{x:-50, opacity:0}} animate={{x:0 ,opacity:1 ,transition:{delay:0.4, ease:'easeInOut', duration:0.7}}} src="./images/logo.svg" />
             </div>
             {viewportWidth < 768 && (
                 <button className="h-7 w-8 flex flex-col justify-between" onClick={() => { setShowHamburgerMenu(!showHamburgMenu) }}>
