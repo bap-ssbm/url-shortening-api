@@ -45,47 +45,73 @@ i learned that there is a function that can let user copy a variable by clicking
 learned a bit more how to do axios, this time, i manually wrote the code of getting the api myself. Getting better at making clean framer-motion animations. and also tailwind CSS. its becoming a bit more second nature to me.
 Although sometimes i have to look at the documentation.
 
+Oh yeah, this is one of my first times using mobile-first workflow, it actually worked better for me, i didnt have to worry about anything breaking in the mobile view, since I created it that way first
+
 ```html
-<h1>Some HTML code I'm proud of</h1>
+ <div className="flex flex-col space-y-20 text-violet-1100 tracking-tight md:flex-row md:space-y-0 md:space-x-16">
+            <ul className="space-y-3">
+                <li className="font-bold text-white mb-6">Features</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Link Shortening</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Branded Links</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Analytics</li>
+            </ul>
+            <ul className="space-y-3">
+                <li className="font-bold text-white mb-6 ">Resources</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Blog</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Developers</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >
+            Support</li>
+            </ul>
+            <ul className="space-y-3">
+                <li className="font-bold text-white mb-6 ">Company</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >About</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Our Team</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Careers</li>
+                <li className="cursor-pointer hover:text-cyan-1000 transition duration-300 ease-in-out" >Contact</li>
+            </ul>
+            
+        </div>
 ```
+I've never really considered using lists much for navs, footers and stuff, but i feel like tailwind has openned up that door for me since, it makes it so that i dont have to worry about removing the way it is normally, before adding my own styles on to it.
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+#shorten-input-box{
+    background-image: url("./images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
 }
+
+#call-to-action{
+    background-image: url("./images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width:768px) {
+    #shorten-input-box{
+        background-image: url("./images/bg-shorten-desktop.svg");
+        background-size: cover;
+    }
+    
+    #call-to-action{
+        background-image: url("./images/bg-boost-desktop.svg");
+        
+    }
+}
+
 ```
+
+I feel like i was able to finally be able to use background-image the way i want and the way it loojks on the preview of how the website people want it.
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  let translate = order === 1 && "md:translate-y-[-40px]";
+    order === 3 && (translate = "md:translate-y-[40px]");
+
+
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+im proud of this order variable i made for the cards in the bottom section. It allowed me to manipulate them the way i wanted with translate, as well as framer motion animations later on.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Using API's is fun, and this project made me appreciate them a bit more.
+Also, since this was my first mobile first project, I feel like I have a bit more to learn, but I feel like this way is pretty nice, and gives me much more flexibilityt than I initially thought.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
