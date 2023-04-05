@@ -17,7 +17,7 @@ const Navbar = () => {
     const [showHamburgMenu, setShowHamburgerMenu] = useState(false);
 
     return (
-        <motion.nav initial={{y:-50}} animate={{y:0, transition:{delay:0.2, ease:'easeInOut', type:'spring'}}} className="flex font-bold my-10 text-violet-1100 items-center justify-between w-full relative z-50 md:mt-20 md:mb-40">
+        <motion.nav initial={{y:-50}} animate={{y:0, transition:{delay:0.2, ease:'easeInOut', type:'spring'}}} className="flex font-bold my-10 text-violet-1100 items-center justify-between w-full relative z-50 md:mt-16 md:mb-40">
 
 
             <div className="mr-10">

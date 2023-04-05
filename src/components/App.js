@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 function App() {
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1, transition:{ease:'easeInOut', duration:0.4}}}>
-      <main className="text-[18px] text-center md:text-left flex flex-col items-center  text-violet-1100 overflow-x-hidden">
+      <main className="text-[16px] text-center md:text-left flex flex-col items-center  text-violet-1100 overflow-x-hidden">
         <section className="px-[5%] md:px-[10%] pb-60 ">
           <Navbar />
           <TopSection />
@@ -20,11 +20,11 @@ function App() {
           <ShortenSection />
           <motion.div 
             initial={{opacity:0}} whileInView={{opacity:1, transition:{ease:'easeInOut', duration:0.4}}}
-            className="text-center flex flex-col space-y-8 my-10 md:w-[50%]">
-            <h2 className="text-violet-1200 font-bold text-[25px] md:text-[40px]">
+            className="text-center flex flex-col space-y-6 my-14 md:w-[35%]">
+            <h2 className="text-violet-1200 font-bold text-[25px] md:text-[40px] tracking-tight">
               Advanced Statistics
             </h2>
-            <p className="font-medium">
+            <p className="font-medium md:text-[18px]">
               Track how your links are performing across the web with our
               advanced statistics dashboard.
             </p>
@@ -46,7 +46,7 @@ function App() {
             }
           }}}
       
-          className="font-bold text-white text-[27px] md:text-[40px]">
+          className="font-bold text-white text-[27px] md:text-[38px]">
           Boost your links today
         </motion.h1>
         <motion.div initial={{ opacity:0, scale:0}} whileInView={{ opacity:1 , scale:1, transition:{

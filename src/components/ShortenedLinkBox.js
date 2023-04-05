@@ -11,7 +11,7 @@ const ShortenedLinkBox = ({ links }) => {
             initial={{ opacity: 0, y: -10, scale: 0.8 }}
             whileInView={{ opacity: 1, y: 0, scale: 1, transition: { ease: 'easeInOut', duration: 0.3 } }}
             viewport={{once:true}}
-            className="shadow-md flex flex-col mb-8  w-full  py-8 space-y-8 rounded-lg text-left bg-white md:flex-row md:space-y-0 md:items-center md:justify-between md:py-5 " >
+            className="shadow-md flex flex-col mt-8  w-full  py-8 space-y-8 rounded-lg text-left bg-white md:flex-row md:space-y-0 md:items-center md:justify-between md:py-5 " >
             <div className="w-full border-bott px-8">
                 <a className="text-black font-medium" href={links.link}>
                     {links.link}
@@ -25,14 +25,14 @@ const ShortenedLinkBox = ({ links }) => {
                 <AnimatePresence>
                     {copied ? (
                         <button onClick={() => { navigator.clipboard.writeText(links.shortLink) }}
-                            className="text-white font-bold bg-violet-1000 py-3  rounded-lg md:py-3 md:w-[110px] md:text-[16px] hover:bg-opacity-50 transition duration-300 ease-in-out">
+                            className="text-white font-bold bg-violet-1000 py-3  rounded-lg md:py-3 md:w-[110px] md:text-[16px] md:hover:bg-opacity-50 transition duration-300 ease-in-out">
                             Copied!
                         </button>
                     ) : (<button onClick={() => {
                         navigator.clipboard.writeText(links.shortLink);
                         setCopied(true);
                     }}
-                        className="text-white font-bold bg-cyan-1000 py-3  rounded-lg md:py-3 md:w-[110px] md:text-[16px] hover:bg-opacity-50 transition duration-300 ease-in-out">
+                        className="text-white font-bold bg-cyan-1000 py-3  rounded-lg md:py-3 md:w-[110px] md:text-[16px] md:hover:bg-opacity-50 transition duration-300 ease-in-out">
                         Copy
                     </button>)}
                 </AnimatePresence>
